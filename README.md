@@ -24,61 +24,38 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# Sistema de Gerenciamento de Festas 🎉
 
-## Project setup
+Este é um sistema simples para gerenciar festas e convidados, desenvolvido utilizando o framework **NestJS**. O sistema permite a criação, modificação, visualização e exclusão de festas, assim como o gerenciamento de convidados em cada festa.
 
-```bash
-$ npm install
-```
+## Funcionalidades
 
-## Compile and run the project
+### **Rotas de Festas** (`/party`)
 
-```bash
-# development
-$ npm run start
+- **`POST /party/create`** – Criar uma nova festa.
+- **`GET /party/list`** – Listar todas as festas.
+- **`GET /party/token`** – Obter token de uma festa.
+- **`GET /party/show/:id`** – Mostrar os detalhes de uma festa específica.
+- **`PATCH /party/modify/:id`** – Modificar uma festa existente.
+- **`PATCH /party/cancel/:id`** – Cancelar uma festa.
+- **`POST /party/:id/add-guest`** – Adicionar um convidado a uma festa.
+- **`DELETE /party/:id/remove-guest/:guestId`** – Remover um convidado de uma festa.
+- **`DELETE /party/:id`** – Excluir uma festa.
 
-# watch mode
-$ npm run start:dev
+### **Rotas de Convidados** (`/guest`)
 
-# production mode
-$ npm run start:prod
-```
+- **`POST /guest/create`** – Criar um novo convidado.
+- **`PATCH /guest/modify/:id`** – Modificar um convidado existente.
+- **`DELETE /guest/delete/:id`** – Excluir um convidado.
+- **`GET /guest/list`** – Listar todos os convidados.
+- **`GET /guest/show/:id`** – Exibir os detalhes de um convidado específico.
 
-## Run tests
+## Tecnologias Utilizadas
 
-```bash
-# unit tests
-$ npm run test
+- **NestJS**: Framework utilizado para o desenvolvimento da aplicação.
+- **Prisma ORM**: Para a comunicação com o banco de dados.
+- **PostgreSQL**: Banco de dados utilizado.
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
