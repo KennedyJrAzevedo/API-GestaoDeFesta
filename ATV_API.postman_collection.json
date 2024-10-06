@@ -1,0 +1,427 @@
+{
+	"info": {
+		"_postman_id": "0b04c432-ef4c-44d9-b958-3636adacf81a",
+		"name": "ATV_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37955418"
+	},
+	"item": [
+		{
+			"name": "Party",
+			"item": [
+				{
+					"name": "create Party",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"CrazyParty\",\r\n    \"date\":\"2025-01-29\",\r\n    \"adress\":\"Rua Geraldo Caxias, número 568, Bairro Sem Retorno\",\r\n    \"owner\":\"Zé Ivado\",\r\n    \"status\":1\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}{{party}}/create",
+							"host": [
+								"{{baseURL}}{{party}}"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list Partys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{party}}/list/1",
+							"host": [
+								"{{baseURL}}{{party}}"
+							],
+							"path": [
+								"list",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token Party",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}{{party}}/token/3",
+							"host": [
+								"{{baseURL}}{{party}}"
+							],
+							"path": [
+								"token",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show Party",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{party}}/show",
+							"host": [
+								"{{baseURL}}{{party}}"
+							],
+							"path": [
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify Party",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"CrazyParty\",\r\n    \"date\":\"2025-01-29\",\r\n    \"adress\":\"Rua Geraldo Caxias, número 568, Bairro Sem Retorno\",\r\n    \"owner\":\"Lima\"\r\n  \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}{{party}}/modify/",
+							"host": [
+								"{{baseURL}}{{party}}"
+							],
+							"path": [
+								"modify",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel party",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}{{party}}/cancel",
+							"host": [
+								"{{baseURL}}{{party}}"
+							],
+							"path": [
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add guest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{party}}/addguest/1",
+							"host": [
+								"{{baseURL}}{{party}}"
+							],
+							"path": [
+								"addguest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove guest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{party}}/removeguest/1",
+							"host": [
+								"{{baseURL}}{{party}}"
+							],
+							"path": [
+								"removeguest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove party",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{party}}/delete",
+							"host": [
+								"{{baseURL}}{{party}}"
+							],
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Guest",
+			"item": [
+				{
+					"name": "create Guest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"kennedy\",\r\n    \"email\":\"kennedybrazevedo@gmail.com\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}{{guest}}/create",
+							"host": [
+								"{{baseURL}}{{guest}}"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify Guest",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"testmodify@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}{{guest}}/modify/5",
+							"host": [
+								"{{baseURL}}{{guest}}"
+							],
+							"path": [
+								"modify",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Guest",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{guest}}/delete/5",
+							"host": [
+								"{{baseURL}}{{guest}}"
+							],
+							"path": [
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{guest}}/list",
+							"host": [
+								"{{baseURL}}{{guest}}"
+							],
+							"path": [
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show guest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{guest}}/show/1",
+							"host": [
+								"{{baseURL}}{{guest}}"
+							],
+							"path": [
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "guest",
+			"value": "/guest",
+			"type": "string"
+		},
+		{
+			"key": "party",
+			"value": "/party",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJ0eW5hbWUiOiJDcmF6eVBhcnR5IiwiaWRwYXJ0eSI6NSwiaWF0IjoxNzI2OTgyOTU3LCJleHAiOjE3MjY5ODQ3NTcsImlzcyI6InBhcnR5Iiwic3ViIjoiNSJ9.rvO1Z33Lgd1o-cU1DFp1U7GlwtX9O2rFb0CI6qM4il8",
+			"type": "string"
+		}
+	]
+}
